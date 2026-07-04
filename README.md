@@ -25,6 +25,7 @@ any external software.
 ## Carbon Coefficients (Cradle-to-Gate, A1-A3)
 
 | Material | Coefficient | Source |
+|---|---|---|
 | Concrete C30 | 317.0 kgCO₂e/m³ | Arenas & Shafique (2024) |
 | Concrete C55 | 362.0 kgCO₂e/m³ | Arenas & Shafique (2024) |
 | Rammed Earth | 34.0 kgCO₂e/m³ | Arenas & Shafique (2024) |
