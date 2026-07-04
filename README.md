@@ -7,7 +7,7 @@ and conventional construction, embedded directly in Autodesk Revit.
 
 Extracts wall volumes from a Revit model, maps them to peer-reviewed 
 cradle-to-gate carbon coefficients, and writes the results back into 
-the model as persistent shared parameters — making embodied carbon 
+the model as persistent shared parameters, making embodied carbon 
 visible in schedules, the Properties palette, and filters without 
 any external software.
 
