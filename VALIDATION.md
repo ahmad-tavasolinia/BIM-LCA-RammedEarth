@@ -1,23 +1,59 @@
-Appendix A (Rammed Earth Compositional Validation):
-Since Tally's GaBi database does not include a pre-defined 'rammed earth' category,
- the material was reconstructed from constituent ingredients:
- 1,300 kg coarse aggregate + 700 kg sand + 200 kg water + 0 kg Portland cement per m³ (total density 2,200 kg/m³).
- GaBi's component-based calculation yielded 29.1 kgCO₂/m³, representing European aggregate production averages.
- The 17% variance from the academic coefficient (34 kgCO₂/m³) is attributed to regional differences
- (Colombian vs. European production contexts), system boundary differences (local construction practices vs. industrial manufacturing assumptions),
- and energy mix variations (grid carbon intensity).
- Both values are valid;
- the academic coefficient was selected because it better represents project-specific regional contexts,
- aligning with the tool's intended application in location-specific early-stage design.
+# Validation
 
- Appendix B (Industry-Academia Coefficient Gap Root Cause Analysis):
- European C30 concrete (academic):
- 280-320 kg cement/m³ content, 20-35% SCM replacement rate, material-optimized design approach under EN 206 efficiency-focused regulation,
- yielding approximately 317 kgCO₂/m³.
- North American 'C30' concrete (industry/GaBi): 335-390 kg cement/m³ content, 10-20% SCM replacement rate,
- safety-factor conservative design under ACI 318 durability-focused regulation, yielding approximately 390 kgCO₂/m³.
- The GaBi database's 'concrete' category defaults to structural-grade specifications (weighted average including commercial, industrial,
- and infrastructure applications) rather than residential-grade minimums.
- Academic coefficients represent achievable optimization; industry databases represent typical practice.
- This explains why the back-calculated GaBi coefficient (390.6) falls between C30 and C55 — it is a conservative industry baseline,
- rather than an optimized residential specification.
+## Rammed Earth Coefficient
+
+The academic coefficient (34 kgCO₂/m³) is sourced from Arenas & 
+Shafique (2024), a cradle-to-gate LCA of Colombian earthen 
+construction using SimaPro v8.4 and the Ecoinvent database, covering 
+soil excavation, compaction, local transportation, and regional grid 
+carbon intensity.
+
+Since Tally's GaBi database has no pre-defined rammed earth category, 
+validation used a reconstructed mix: 1,300 kg coarse aggregate + 
+700 kg sand + 200 kg water + 0 kg Portland cement per m³ 
+(density 2,200 kg/m³). GaBi yielded 29.1 kgCO₂/m³ — a 17% variance 
+from the academic coefficient, attributable to regional context 
+(Colombian vs. European production) and energy mix differences. 
+Both values are valid for their respective contexts.
+
+## Concrete C30 Coefficient
+
+The academic coefficient (317 kgCO₂/m³) reflects European residential 
+specifications: 280-320 kg cement/m³, 20-35% SCM replacement, under 
+EN 206 efficiency-focused standards.
+
+Tally's GaBi output for the same volume implied an effective 
+coefficient of 390.6 kgCO₂/m³ — consistent with North American 
+structural-grade concrete (335-390 kg cement/m³, 10-20% SCM, ACI 318 
+standards). GaBi defaults to weighted averages across commercial and 
+infrastructure applications rather than residential-grade minimums.
+
+## Validation Results
+
+Tool validated on a single-storey residential prototype 
+(162.25 m², 34.59 m³ wall volume) against Tally (GaBi Professional).
+
+| Metric | Result |
+|---|---|
+| Volume extraction variance | 0% |
+| Carbon variance (industry-aligned coefficients) | 7.3% |
+| Systematic offset across both materials | 17-19% |
+| Comparative reduction estimate difference | 3.3 percentage points |
+
+The 7.3% variance falls within standard LCA uncertainty ranges 
+(±10% for cradle-to-gate assessments).
+
+## Calibration
+
+A calibration factor of ×1.23 (derived from 13,510 ÷ 10,965) 
+can be applied for North American industry alignment. 
+European projects can likely use academic coefficients without 
+adjustment. Asian and other regional contexts should validate 
+against local EPD databases.
+
+## Scope Note
+
+This tool calculates cradle-to-gate (A1-A3) embodied carbon only. 
+It should not be used for whole-life carbon claims without 
+incorporating construction (A4-A5), operational (B), and 
+end-of-life (C) stages.
